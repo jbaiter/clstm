@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyclstm &mdash; pyclstm 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="pyclstm 0.1 documentation" href="#"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> pyclstm
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">pyclstm</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#example-usage">Example Usage</a></li>
+<li><a class="reference internal" href="#module-pyclstm">API Reference</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">pyclstm</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>pyclstm</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyclstm">
+<h1>pyclstm<a class="headerlink" href="#pyclstm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>Requirements:</strong></dt>
+<dd><ul class="first last simple">
+<li>A recent version of Eigen (&gt;= 3.3) with development headers</li>
+<li>A C++ compiler (g++ is recommended)</li>
+<li>Cython</li>
+</ul>
+</dd>
+</dl>
+<p><strong>Installation:</strong></p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span>$ pip install git+https://github.com/jbaiter/clstm.git@cython
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-usage">
+<h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
+<p><strong>Training:</strong></p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">TODO</span>
+</pre></div>
+</div>
+<p><strong>OCR:</strong></p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">TODO</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="module-pyclstm">
+<span id="api-reference"></span><h2>API Reference<a class="headerlink" href="#module-pyclstm" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyclstm.ClstmOcr">
+<em class="property">class </em><code class="descclassname">pyclstm.</code><code class="descname">ClstmOcr</code><a class="headerlink" href="#pyclstm.ClstmOcr" title="Permalink to this definition">¶</a></dt>
+<dd><p>An OCR engine based on CLSTM, operating on line images.</p>
+<p>Use this class to either train your own OCR model or to load a
+pre-trained model from disk.</p>
+<p>For training, set your parameters with <a class="reference internal" href="#pyclstm.ClstmOcr.prepare_training" title="pyclstm.ClstmOcr.prepare_training"><code class="xref py py-meth docutils literal"><span class="pre">prepare_training()</span></code></a>, and
+then iteratively supply a line image (<a class="reference external" href="http://pillow.readthedocs.io/en/3.2.x/reference/Image.html#PIL.Image.Image" title="(in Pillow (PIL Fork) v3.2.0)"><code class="xref py py-class docutils literal"><span class="pre">PIL.Image.Image</span></code></a> or
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-class docutils literal"><span class="pre">numpy.ndarray</span></code></a>) and the ground truth for the line to
+<a class="reference internal" href="#pyclstm.ClstmOcr.train" title="pyclstm.ClstmOcr.train"><code class="xref py py-meth docutils literal"><span class="pre">train()</span></code></a>. Once finished with training, call <a class="reference internal" href="#pyclstm.ClstmOcr.save" title="pyclstm.ClstmOcr.save"><code class="xref py py-meth docutils literal"><span class="pre">save()</span></code></a>
+to persist the trained model to disk.</p>
+<p>For prediction, two methods are available. The simplest,
+<a class="reference internal" href="#pyclstm.ClstmOcr.recognize" title="pyclstm.ClstmOcr.recognize"><code class="xref py py-meth docutils literal"><span class="pre">recognize()</span></code></a> takes a line image (see above) and returns the
+recognized text as a string. If more information about the recognized
+text is needed, use <a class="reference internal" href="#pyclstm.ClstmOcr.recognize_chars" title="pyclstm.ClstmOcr.recognize_chars"><code class="xref py py-meth docutils literal"><span class="pre">recognize_chars()</span></code></a>, which returns a generator
+that yields <code class="xref py py-class docutils literal"><span class="pre">CharPrediction</span></code> objects that contain information
+about each character (x-offset, confidence and recognized character).</p>
+<dl class="method">
+<dt id="pyclstm.ClstmOcr.aligned">
+<code class="descname">aligned</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#pyclstm.ClstmOcr.aligned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the aligned output of the last trained sample.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#unicode" title="(in Python v2.7)">unicode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyclstm.ClstmOcr.load">
+<code class="descname">load</code><span class="sig-paren">(</span><em>self</em>, <em>str fname</em><span class="sig-paren">)</span><a class="headerlink" href="#pyclstm.ClstmOcr.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a pre-trained model from disk.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fname</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Path to pre-trained model on disk</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyclstm.ClstmOcr.prepare_training">
+<code class="descname">prepare_training</code><span class="sig-paren">(</span><em>self</em>, <em>lexicon</em>, <em>int num_hidden=100</em>, <em>float learning_rate=0.0001</em>, <em>float momentum=0.9</em><span class="sig-paren">)</span><a class="headerlink" href="#pyclstm.ClstmOcr.prepare_training" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare training by setting the lexicon and hyperparameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lexicon</strong> (<em>iterable of str/unicode</em>) &#8211; Iterable of characters that are to be recognized
+by the OCR model, must not have duplicates</li>
+<li><strong>num_hidden</strong> (<a class="reference external" href="http://pillow.readthedocs.io/en/3.2.x/reference/ImageMath.html#int" title="(in Pillow (PIL Fork) v3.2.0)"><em>int</em></a>) &#8211; Number of hidden units in the LSTM layers, larger
+values require more storage/memory and take longer
+for training and recognition, so try to find
+a good performance/cost tradeoff.</li>
+<li><strong>learning_rate</strong> (<a class="reference external" href="http://pillow.readthedocs.io/en/3.2.x/reference/ImageMath.html#float" title="(in Pillow (PIL Fork) v3.2.0)"><em>float</em></a>) &#8211; Learning rate for the model training</li>
+<li><strong>momentum</strong> (<a class="reference external" href="http://pillow.readthedocs.io/en/3.2.x/reference/ImageMath.html#float" title="(in Pillow (PIL Fork) v3.2.0)"><em>float</em></a>) &#8211; Momentum for the model training</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyclstm.ClstmOcr.recognize">
+<code class="descname">recognize</code><span class="sig-paren">(</span><em>self</em>, <em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#pyclstm.ClstmOcr.recognize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recognize the text on the line image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>img</strong> (<a class="reference external" href="http://pillow.readthedocs.io/en/3.2.x/reference/Image.html#PIL.Image.Image" title="(in Pillow (PIL Fork) v3.2.0)"><code class="xref py py-class docutils literal"><span class="pre">PIL.Image.Image</span></code></a>/<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-class docutils literal"><span class="pre">numpy.ndarray</span></code></a>) &#8211; The line image for the ground truth</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The recognized text for the line</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#unicode" title="(in Python v2.7)">unicode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyclstm.ClstmOcr.recognize_chars">
+<code class="descname">recognize_chars</code><span class="sig-paren">(</span><em>self</em>, <em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#pyclstm.ClstmOcr.recognize_chars" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Recognize the characters on the line, along with their position</dt>
+<dd>and confidence.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>img</strong> (<a class="reference external" href="http://pillow.readthedocs.io/en/3.2.x/reference/Image.html#PIL.Image.Image" title="(in Pillow (PIL Fork) v3.2.0)"><code class="xref py py-class docutils literal"><span class="pre">PIL.Image.Image</span></code></a>/<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-class docutils literal"><span class="pre">numpy.ndarray</span></code></a>) &#8211; The line image for the ground truth</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The recognized text for the line, represented as
+information about its composing characters.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">generator that yield <code class="xref py py-class docutils literal"><span class="pre">CharPrediction</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyclstm.ClstmOcr.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>self</em>, <em>str fname</em><span class="sig-paren">)</span><a class="headerlink" href="#pyclstm.ClstmOcr.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the model to disk.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fname</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Path to store model in</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyclstm.ClstmOcr.train">
+<code class="descname">train</code><span class="sig-paren">(</span><em>self</em>, <em>img</em>, <em>unicode text</em><span class="sig-paren">)</span><a class="headerlink" href="#pyclstm.ClstmOcr.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Train the model with a line image and its ground truth.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>img</strong> (<a class="reference external" href="http://pillow.readthedocs.io/en/3.2.x/reference/Image.html#PIL.Image.Image" title="(in Pillow (PIL Fork) v3.2.0)"><code class="xref py py-class docutils literal"><span class="pre">PIL.Image.Image</span></code></a>/<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-class docutils literal"><span class="pre">numpy.ndarray</span></code></a>) &#8211; The line image for the ground truth</li>
+<li><strong>text</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#unicode" title="(in Python v2.7)"><em>unicode</em></a>) &#8211; The ground truth text for the line image</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The recognized text for the line image, can be used
+to estimate error against the ground truth
+(via <a class="reference internal" href="#pyclstm.levenshtein" title="pyclstm.levenshtein"><code class="xref py py-func docutils literal"><span class="pre">levenshtein()</span></code></a>)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#unicode" title="(in Python v2.7)">unicode</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="pyclstm.levenshtein">
+<code class="descclassname">pyclstm.</code><code class="descname">levenshtein</code><span class="sig-paren">(</span><em>unicode a</em>, <em>unicode b</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#pyclstm.levenshtein" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine the Levenshtein-distance between to unicode strings.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="http://pillow.readthedocs.io/en/3.2.x/reference/ImageMath.html#int" title="(in Pillow (PIL Fork) v3.2.0)">int</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Thomas Breuel, Johannes Baiter.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
