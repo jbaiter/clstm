@@ -26,15 +26,32 @@ Example Usage
 
 **Training:**
 
-.. code::
-
-    TODO
-
-**OCR:**
+Refer to ``run_uw3_500.py`` in the root directory for a more comprehensive
+example.
 
 .. code::
 
-    TODO
+    import pyclstm
+    ocr = pyclstm.ClstmOcr()
+    ocr.prepare_training(
+        graphemes=graphemes,  # A list of characters the engine is supposed to recognize
+    )
+
+    # line_img can be an image loaded with PIL/Pillow or a numpy array
+    for line_img, ground_truth in training_data:
+        ocr.train(line_img, ground_truth)
+    ocr.save("my_model.clstm")
+
+
+**Recognition:**
+
+.. code::
+
+    import pyclstm
+    ocr = pyclstm.ClstmOcr()
+    ocr.load("my_model.clstm")
+    text = ocr.recognize(line_img)
+>>>>>>> cython
 
 
 API Reference

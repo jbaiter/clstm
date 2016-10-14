@@ -156,13 +156,28 @@
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
 <p><strong>Training:</strong></p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">TODO</span>
+<p>Refer to <code class="docutils literal"><span class="pre">run_uw3_500.py</span></code> in the root directory for a more comprehensive
+example.</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyclstm</span>
+<span class="n">ocr</span> <span class="o">=</span> <span class="n">pyclstm</span><span class="o">.</span><span class="n">ClstmOcr</span><span class="p">()</span>
+<span class="n">ocr</span><span class="o">.</span><span class="n">prepare_training</span><span class="p">(</span>
+    <span class="n">graphemes</span><span class="o">=</span><span class="n">graphemes</span><span class="p">,</span>  <span class="c1"># A list of characters the engine is supposed to recognize</span>
+<span class="p">)</span>
+
+<span class="c1"># line_img can be an image loaded with PIL/Pillow or a numpy array</span>
+<span class="k">for</span> <span class="n">line_img</span><span class="p">,</span> <span class="n">ground_truth</span> <span class="ow">in</span> <span class="n">training_data</span><span class="p">:</span>
+    <span class="n">ocr</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">line_img</span><span class="p">,</span> <span class="n">ground_truth</span><span class="p">)</span>
+<span class="n">ocr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;my_model.clstm&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>OCR:</strong></p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">TODO</span>
+<p><strong>Recognition:</strong></p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyclstm</span>
+<span class="n">ocr</span> <span class="o">=</span> <span class="n">pyclstm</span><span class="o">.</span><span class="n">ClstmOcr</span><span class="p">()</span>
+<span class="n">ocr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;my_model.clstm&quot;</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">ocr</span><span class="o">.</span><span class="n">recognize</span><span class="p">(</span><span class="n">line_img</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; cython</p>
 </div>
 <div class="section" id="module-pyclstm">
 <span id="api-reference"></span><h2>API Reference<a class="headerlink" href="#module-pyclstm" title="Permalink to this headline">¶</a></h2>
