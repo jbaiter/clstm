@@ -51,7 +51,6 @@ example.
     ocr = pyclstm.ClstmOcr()
     ocr.load("my_model.clstm")
     text = ocr.recognize(line_img)
->>>>>>> cython
 
 
 API Reference
